@@ -4,7 +4,6 @@
         incremental_strategy = 'append'
     )
 }}
-
 select 
 EMPLOYEE_ID,
 FIRST_NAME,
@@ -18,4 +17,4 @@ COMMISSION_PCT,
 MANAGER_ID,
 DEPARTMENT_ID,
 current_timestamp as LOAD_TIME
-from hr.src_employees
+from {{source('hr','src_employees')}}
