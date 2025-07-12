@@ -16,7 +16,7 @@ SALARY,
 COMMISSION_PCT,
 MANAGER_ID,
 DEPARTMENT_ID,
-current_timestamp as LOAD_TIME
+current_timestamp as load_time
 from {{source('hr','src_employees')}}
 
 {% if is_incremental() %}
