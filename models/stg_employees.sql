@@ -21,7 +21,7 @@ from {{source('hr','src_employees')}}
 
 {% if is_incremental() %}
 
-where load_time>= (select coalsece(max(load_time), '1900-01-01 00:00:00')
-from {{this}}
+where load_time>= (select coalesce(max(load_time), '1900-01-01 00:00:00')
+from {{this}})
 
-{% endincremental %}
+{% endif %}

@@ -4,4 +4,4 @@ sources:
     database: SOURCE_DB
     schema: hr
     tables:
-      - name: src_employees
+      - name: hr.src_employees
