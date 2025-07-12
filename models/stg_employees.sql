@@ -18,3 +18,10 @@ MANAGER_ID,
 DEPARTMENT_ID,
 current_timestamp as LOAD_TIME
 from {{source('hr','src_employees')}}
+
+{% if is_incremental() %}
+
+where load_time>= (select coalsece(max(load_time), '1900-01-01 00:00:00')
+from {{this}}
+
+{% endincremental %}
